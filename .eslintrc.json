@@ -25,6 +25,8 @@
     "rules": {
         "prettier/prettier": "error",
         "class-methods-use-this": "off",
+        "@typescript-eslint/camelcase": "off",
+        "camelcase": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
@@ -33,14 +35,6 @@
             }
         ]
     },
-    "overrides": [
-        {
-            "files": ["./src/models/*.ts"],
-            "rules": {
-                "camelcase": "off"
-            }
-        }
-    ],
     "settings": {
         "import/resolver": {
             "node": {
