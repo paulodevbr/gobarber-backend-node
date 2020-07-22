@@ -33,6 +33,14 @@
             }
         ]
     },
+    "overrides": [
+        {
+            "files": ["./src/models/*.ts"],
+            "rules": {
+                "camelcase": "off"
+            }
+        }
+    ],
     "settings": {
         "import/resolver": {
             "node": {
