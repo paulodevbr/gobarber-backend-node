@@ -17,6 +17,7 @@ describe('ListProviderMonthAvailability', () => {
     const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
     const promises = hours.map(hour => {
       return fakeAppointmentsRepository.create({
+        user_id: 'user',
         provider_id: 'user',
         date: new Date(2020, 4, 20, hour, 0, 0),
       });
@@ -24,6 +25,7 @@ describe('ListProviderMonthAvailability', () => {
 
     promises.push(
       fakeAppointmentsRepository.create({
+        user_id: 'user',
         provider_id: 'user',
         date: new Date(2020, 5, 20, 8, 0, 0),
       }),

@@ -1,6 +1,6 @@
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import { inject, injectable } from 'tsyringe';
-import AppError from '@shared/errors/AppError';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 interface IRequest {
   user_id: string;
@@ -13,16 +13,10 @@ class ListProvidersService {
     private usersRepository: IUsersRepository,
   ) {}
 
-  public async execute({ user_id }: IRequest) {
-    const user = await this.usersRepository.findAllProviders({
+  public async execute({ user_id }: IRequest): Promise<User[]> {
+    return this.usersRepository.findAllProviders({
       except_user_id: user_id,
     });
-
-    if (!user) {
-      throw new AppError('User not found.');
-    }
-
-    return user;
   }
 }
 
