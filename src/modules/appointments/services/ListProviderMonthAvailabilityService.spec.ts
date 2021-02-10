@@ -34,7 +34,7 @@ describe('ListProviderMonthAvailability', () => {
     await Promise.all(promises);
 
     const availability = await listProviderMonthAvailability.execute({
-      user_id: 'user',
+      provider_id: 'user',
       year: 2020,
       month: 5,
     });
