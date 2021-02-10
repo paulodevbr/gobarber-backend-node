@@ -27,15 +27,9 @@ describe('ShowProfile', () => {
   });
 
   it('should not be able to show the profile from non-existing user', async () => {
-    const user = await fakeUsersRepository.create({
-      name: 'John Doe',
-      email: 'johndoe@example.com',
-      password: '123456',
-    });
-
     await expect(
       showProfile.execute({
-        user_id: user.id,
+        user_id: 'non-existent-user',
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
