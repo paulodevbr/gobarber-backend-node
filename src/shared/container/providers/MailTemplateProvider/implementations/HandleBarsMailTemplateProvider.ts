@@ -1,6 +1,6 @@
 import handlebars from 'handlebars';
-import IMailTemplateProvider from '@shared/container/providers/TemplateMailProvider/models/IMailTemplateProvider';
-import IParseMailTemplateDTO from '@shared/container/providers/TemplateMailProvider/dtos/IParseMailTemplateDTO';
+import IMailTemplateProvider from '@shared/container/providers/MailTemplateProvider/models/IMailTemplateProvider';
+import IParseMailTemplateDTO from '@shared/container/providers/MailTemplateProvider/dtos/IParseMailTemplateDTO';
 import fs from 'fs';
 
 class HandleBarsMailTemplateProvider implements IMailTemplateProvider {
